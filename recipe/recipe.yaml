@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-cli
-  version: 2.73.0
+  version: "2.74.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure_cli-${{ version }}.tar.gz
-  sha256: 0e311b21d7cd89526de79097c4ac5af3ec9900a1d335f3df36f3dde9bd90d5fa
+  sha256: 28b938246f0a2099e378c60ea22e2931fec2226f3f44e2a98b1895521b85540a
 
 build:
   number: 0
@@ -131,14 +131,14 @@ tests:
       pip_check: true
       python_version: ${{ python_min }}.*
   - script:
-    - if: unix
-      then:
-        - az --version
+      - if: unix
+        then:
+          - az --version
     # Windows needs more time to release the file lock.
     # Test failed: failed to remove directory `D:\bld\test\test_azure-cli74psTt`: The process cannot access the file because it is being used byanother process. (os error 32)
-    - if: win
-      then:
-        - az --version && sleep 5
+      - if: win
+        then:
+          - az --version && sleep 5
 
 about:
   summary: Microsoft Azure Command-Line Tools
