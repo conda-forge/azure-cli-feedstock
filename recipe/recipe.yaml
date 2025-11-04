@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-cli
-  version: "2.74.0"
+  version: "2.79.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure_cli-${{ version }}.tar.gz
-  sha256: 28b938246f0a2099e378c60ea22e2931fec2226f3f44e2a98b1895521b85540a
+  sha256: 2c039f1fb1c84efe093233838146a0ce5fd41b4ec65d6a08b37ef0f903dd29c0
 
 build:
   number: 0
